@@ -1,8 +1,10 @@
 const express = require('express');
-const app = express();
+const bodyParser = require("body-parser");
 const cheerio = require("cheerio");
 const request = require('request');
 const mongoose = require('mongoose');
+
+const app = express();
 
 const port = process.env.PORT || 5000;
 
@@ -14,6 +16,10 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);
+
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 require('./controllers/articlesController')(app, db);
 require('./controllers/notesController')(app, db);

@@ -6,7 +6,11 @@ module.exports = function (app, db) {
   });
 
   app.post('/api/articles', function (req, res) {
+    console.log('inside post of articles endpoint');
+    console.log('REQUEST BODY: ' + req.body);
     db.Article.create(req.body).then(function (createdArticle) {
+      console.log('inside success of Article.create');
+      console.log('Created article title: ' + createdArticle.title);
       res.send(createdArticle);
     });
   });

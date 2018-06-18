@@ -11,7 +11,6 @@ class ScraperView extends Component {
   }
   
   scrapeButtonClick = () => {
-    console.log('inside scraper on click');  
     fetch('/api/scraper')
       .then(result=>result.json())
       .then(articles=>this.setState({articles}));
