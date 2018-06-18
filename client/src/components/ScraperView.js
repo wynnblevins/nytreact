@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { Button } from 'react-materialize';
-
+import Article from './Article';
 class ScraperView extends Component { 
   constructor() {
     super(); 
+    this.state = {
+      articles: []
+    }
   }
   
-  scrapeButtonClick() {
+  scrapeButtonClick = () => {
     console.log('inside scraper on click');  
-    // fetch('/api/articles')
-    //   .then(result=>result.json())
-    //   .then(items=>this.setState({items}));
+    fetch('/api/scraper')
+      .then(result=>result.json())
+      .then(articles=>this.setState({articles}));
   }
 
   render() {
@@ -18,7 +21,11 @@ class ScraperView extends Component {
       <div>
         <Button onClick={this.scrapeButtonClick} 
           waves='light'>Scrape Articles</Button>
-        <div id="articlesWrapper"></div>
+        <div id="articlesWrapper">
+          {this.state.articles.map((article, i) => (
+            <Article key={i} name={article.name}></Article> 
+          ))}
+        </div>
       </div>
     );
   }
