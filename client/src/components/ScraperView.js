@@ -23,7 +23,7 @@ class ScraperView extends Component {
           waves='light'>Scrape Articles</Button>
         <div id="articlesWrapper">
           {this.state.articles.map((article, i) => (
-            <Article key={i} name={article.name}></Article> 
+            <Article key={i} name={article.title}></Article> 
           ))}
         </div>
       </div>
