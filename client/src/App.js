@@ -1,10 +1,14 @@
 import React, { Component } from 'react'; 
-import { Navbar, NavItem } from 'react-materialize';
+import { Navbar, NavItem, Button } from 'react-materialize';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ScraperView from './components/ScraperView';
 import SavedView from './components/SavedView';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
   render() {
     return (
       <Router>
@@ -15,7 +19,7 @@ class App extends Component {
           </Navbar>
           <Route exact path="/" component={ScraperView} />
           <Route path="/scraper" component={ScraperView} />
-          <Route path="/saved" component={SavedView} />
+          <Route path="/saved" component={SavedView} />  
         </div>
       </Router>
     );
