@@ -1,8 +1,9 @@
 import React, { Component } from 'react'; 
-import { Navbar, NavItem, Button } from 'react-materialize';
+import { Navbar, NavItem } from 'react-materialize';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ScraperView from './components/ScraperView';
 import SavedView from './components/SavedView';
+import './App.css';
 
 class App extends Component {
   constructor(props) {

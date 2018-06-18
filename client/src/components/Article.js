@@ -3,7 +3,9 @@ import React, { Component } from "react";
 class Article extends Component {
   render() {
     return (
-      <h1>{this.props.name}</h1>
+      <div className="scrapedHeadline">
+        <h2>{this.props.name}</h2>
+      </div>
     );
   }
 }
