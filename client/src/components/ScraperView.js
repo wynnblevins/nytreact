@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
+import { Button } from 'react-materialize';
 
-class ScraperView extends Component {
+class ScraperView extends Component { 
+  constructor() {
+    super(); 
+  }
+  
+  scrapeButtonClick() {
+    console.log('inside scraper on click');  
+    // fetch('/api/articles')
+    //   .then(result=>result.json())
+    //   .then(items=>this.setState({items}));
+  }
+
   render() {
     return (
       <div>
-        <h2>Scraper View</h2>
+        <Button onClick={this.scrapeButtonClick} 
+          waves='light'>Scrape Articles</Button>
+        <div id="articlesWrapper"></div>
       </div>
     );
   }
