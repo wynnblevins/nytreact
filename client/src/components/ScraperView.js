@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-materialize';
 import Article from './Article';
+
 class ScraperView extends Component { 
   constructor() {
     super(); 
