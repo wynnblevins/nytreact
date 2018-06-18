@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import { Navbar, NavItem } from 'react-materialize';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ScraperView from './components/ScraperView';
 import SavedView from './components/SavedView';
 
