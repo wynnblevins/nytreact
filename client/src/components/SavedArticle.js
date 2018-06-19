@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from 'react-materialize';
+import NoteDialog from './NoteDialog';
 
 class SavedArticle extends Component {
   constructor(props) {
@@ -19,9 +20,8 @@ class SavedArticle extends Component {
     return (
       <div className="scrapedHeadline">
         <h2>{this.props.name}</h2>
-        <Button onClick={() => {
-          this.onAddNoteClick();
-        }} waves='light'>Add Note</Button>
+        
+        <NoteDialog></NoteDialog>
         <Button variant="contained" color="secondary" onClick={() => {
           this.onNoteDeleteClick();
         }}>Remove</Button>
